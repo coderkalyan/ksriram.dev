@@ -1,0 +1,30 @@
+baseURL = "http://ksriram.dev"
+languageCode = "en-us"
+title = "Kalyan's Blog"
+theme = "re-terminal"
+
+[params]
+themeColor = "green"
+
+[params.logo]
+logoText = "Kalyan's Blog"
+
+[[menu.main]]
+identifier = "about"
+name = "About Me"
+url = "/about"
+
+[[menu.main]]
+identifier = "portfolio"
+name = "Portfolio"
+url = "/portfolio"
+
+[[menu.main]]
+identifier = "github"
+name = "GitHub"
+url = "https://github.com/coderkalyan"
+
+[[menu.main]]
+identifier = "resources"
+name = "Resources"
+url = "/resources"

@@ -1,0 +1,3 @@
+[submodule "hugo-theme-re-terminal"]
+	path = hugo-theme-re-terminal
+	url = https://github.com/mirus-ua/hugo-theme-re-terminal
