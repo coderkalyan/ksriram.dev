@@ -1,4 +1,4 @@
-baseURL = "http://ksriram.dev"
+baseURL = "https://ksriram.dev"
 languageCode = "en-us"
 title = "Kalyan's Blog"
 theme = "re-terminal"
