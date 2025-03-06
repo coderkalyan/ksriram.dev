@@ -211,5 +211,43 @@ The first point is trivial, as we can just change our `always @(*)` assert block
 `endif
 ```
 
-Notice that we are 
-// TODO: make sure the result is fully synchronous with assert
+We also have to modify the configuration file. Here's the updated configuration, with a few cycles of bounded model check:
+
+Notice that we are using the past values of the opsel and the input operands (through the temporary results `f_add`, `f_sub`, etc) but the current value of o_result. Again, this is because o_result latches the value of the calculation in the previous cycle *on each clock edge*.
+
+We can run this and see that... the proof still fails. Why?
+
+
+To prevent this, we need to wait to start checking until the second rising clock edge, which is when we can make valid statements about what existed on the previous clock cycle. The easiest way to do this is to define a register that is initially set to 0, and set to 1 on the first (and any later) clock cycle.
+
+```verilog
+`ifdef FORMAL
+    wire [7:0] f_add = i_a + i_b;
+    wire [7:0] f_sub = i_a - i_b;
+    wire [7:0] f_and = i_a & i_b;
+    wire [7:0] f_xor = i_a ^ i_b;
+
+    reg f_past_valid;
+    initial f_past_valid <= 1'b0;
+    always @(posedge i_clk) f_past_valid <= 1'b1;
+
+    always @(posedge i_clk) begin
+        if (f_past_valid) begin
+            case ($past(i_opsel))
+                2'h0: assert (o_result == $past(f_add));
+                2'h1: assert (o_result == $past(f_sub));
+                2'h2: assert (o_result == $past(f_and));
+                2'h3: assert (o_result == $past(f_xor));
+            endcase
+        end
+    end
+`endif
+```
+
+With this change, our formal tests pass. And that's it! We've proved that our synchronous ALU performs all four operations correctly and muxes between them correctly as well.
+
+# Next steps
+
+This is a very simple ALU, with all operations taking a single cycle and therefore no enable signal or output valid. In the next article, we will extend the ALU example with resets, multi cycle operation and get a basic introduction to state machines.
+
+Next up: asynchronous resets, state machines, and cover statements!
