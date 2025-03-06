@@ -7,7 +7,7 @@ theme = "re-terminal"
 themeColor = "green"
 
 [params.logo]
-logoText = "Kalyan's Blog"
+logoText = "/home/kalyan"
 
 [[menu.main]]
 identifier = "about"
