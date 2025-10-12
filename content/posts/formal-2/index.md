@@ -124,7 +124,7 @@ always @(*) begin
 end
 ```
 
-into (this is pseudocode, SystemVerilog does have an implication operator but its used differently):
+into (this is pseudocode, SystemVerilog does have an implication operator but it's used differently):
 
 ```verilog
 always @(*) begin
