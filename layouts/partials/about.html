@@ -1,0 +1,57 @@
+{{ $styles := resources.Get "css/styles.css" | minify }}
+<link rel="stylesheet" href="{{ $styles.Permalink }}" />
+
+<div id="profile">
+    <div>
+        {{ $image := resources.Get "images/profile.jpg" }}
+        <img src="{{ $image.Permalink }}">
+    </div>
+
+    <div>
+        <h2>Kalyan Sriram</h2>
+        <p>
+            B.S. Computer Engineering, 2026 <br>
+            <a href="https://engineering.wisc.edu/departments/electrical-computer-engineering/">Electrical and Computer Engineering</a> <br>
+            University of Wisconsin - Madison <br>
+            <br>
+            <b>kgsriram [at] wisc [dot] edu</b> <br>
+            <a href="">CV</a> &middot;
+            <a href="https://github.com/coderkalyan">GitHub</a> &middot;
+            <a href="https://linkedin.com/in/kalyangsriram">LinkedIn</a>
+        </p>
+    </div>
+</div>
+
+<p>
+    Hi! I'm Kalyan, a 4th year student at UW Madison, studying computer
+    engineering and computer science. My research interests are in computer
+    architecture, compiler design, and hardware security. I'm also interested in
+    programming language theory, digital logic/hardware synthesis, and
+    distributed systems.
+
+    <br>
+    <br>
+
+    Outside academics, I like to start way too many personal projects, some of
+    which you can find <a href="/projects">here</a>. I occasionally <a
+        href="/posts">blog</a> about compilers stuff. In my free time, I enjoy <a
+        href="/pictures">photography</a>, cooking, and hiking!
+</p>
+
+<h2>Recent Experiences</h2>
+<p>
+    <b>[Fall 2025]</b> <br/>
+    I joined the flight software team at SpaceX Starlink as an intern for a second time in Redmond, WA. This time, I worked on compressing satellite telemetry to enable better performance monitoring while reducing network costs.
+</p>
+<p>
+    <b>[Summer 2025]</b> <br/>
+    I had the incredible opportunity to join the
+    <a>Processor Architecture Lab</a> at EPFL through the Summer@EPFL
+    research fellowship program. I spent the summer studying reconfigurable
+    logic architectures (think FPGAs) under direction of Prof. Paolo Ienne and
+    PhD student Louis Coulon.
+</p>
+<p>
+    <b>[Summer 2024]</b> <br/>
+    I joined the flight software team at SpaceX Starlink as an intern in Redmond, WA. I worked on granular software updates to the satellite constellation to reduce network bandwidth and update times.
+</p>

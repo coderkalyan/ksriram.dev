@@ -9,22 +9,39 @@ themeColor = "green"
 [params.logo]
 logoText = "/home/kalyan"
 
-[[menu.main]]
-identifier = "about"
-name = "About Me"
-url = "/about"
+[menu]
 
 [[menu.main]]
-identifier = "portfolio"
-name = "Portfolio"
-url = "/portfolio"
+identifier = "research"
+name = "Research"
+url = "/research"
+weight = 10
 
 [[menu.main]]
-identifier = "github"
-name = "GitHub"
-url = "https://github.com/coderkalyan"
+identifier = "projects"
+name = "Projects"
+url = "/projects"
+weight = 20
 
 [[menu.main]]
-identifier = "resources"
-name = "Resources"
-url = "/resources"
+identifier = "teaching"
+name = "Teaching"
+url = "/teaching"
+weight = 30
+
+[[menu.main]]
+identifier = "blog"
+name = "Blog"
+url = "/posts"
+weight = 40
+
+[[menu.main]]
+identifier = "pictures"
+name = "Pictures"
+url = "/pictures"
+weight = 50
+
+# [[menu.main]]
+# identifier = "resources"
+# name = "Resources"
+# url = "/resources"
